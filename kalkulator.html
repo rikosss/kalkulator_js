@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Membuat Kalkulator pada java Script</title>
+    <link rel="stylesheet" href="style.css">
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="bg-img">
+      <div class="content">
+        <header>Kalkulator Sederhana</header>
+        <form name="calc">
+          <div class="field">
+          
+            <input type="text" id="angka_1" required placeholder="Angka1">
+            <input type="text" id="operator" required placeholder="">      
+            <input type="text" id="angka_2" required placeholder="Angka2">
+          </div>
+          <div class="field space">
+        
+            <input type="text" id="hasil" required placeholder="Hasil">
+         
+          </div>
+          <div class="pass">
+            
+          </div>
+           </form> 
+        
+        
+        <div class="links">
+          <div class="facebook" id="plus" onClick="tambah()">+</div>
+          <div class="instagram" id="minus" onClick="kurang()">-</div>
+          <div class="facebook" onClick="kali()">x</div>
+          <div class="instagram" onClick="bagi()">/</div> 
+          <div class="facebook" onClick="hapus()">C</div>
+        </div>
+       
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+	
+	function tambah(){
+		 var angka_1=parseFloat(document.calc.angka_1.value);
+		 var angka_2=parseFloat(document.calc.angka_2.value);
+		 // mengambil elemen dari id by value / nilai kalau inputan text
+		 document.getElementById('operator').value='+';
+		 var hasil = angka_1+angka_2;
+		 document.calc.hasil.value=hasil;
+	}function kurang(){
+		 var angka_1=parseFloat(document.calc.angka_1.value);
+		 var angka_2=parseFloat(document.calc.angka_2.value);
+		 document.getElementById('operator').value='-';
+		 var hasil = angka_1-angka_2;
+		 document.calc.hasil.value=hasil;
+	}function kali(){
+		 var angka_1=parseFloat(document.calc.angka_1.value);
+		 var angka_2=parseFloat(document.calc.angka_2.value);
+		 document.getElementById('operator').value='x';
+		 var hasil= angka_1*angka_2;
+		 document.calc.hasil.value=hasil;
+	}function bagi(){
+		 var angka_1=parseFloat(document.calc.angka_1.value);
+		 var angka_2=parseFloat(document.calc.angka_2.value);
+		 document.getElementById('operator').value='/';
+		 var hasil= angka_1/angka_2;
+		 document.calc.hasil.value=hasil;
+	}
+	function hapus(){
+		document.getElementById('operator').value='';
+		document.getElementById('hasil').value='';
+		document.getElementById('angka_2').value='';
+		document.getElementById('angka_1').value='';
+
+	}
+
+	
+
+
+
+</script>
